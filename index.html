@@ -1,1 +1,153 @@
-random
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Child's Adult Height Predictor</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Child's Adult Height Predictor">
+  <meta name="author" content="Emanuele Pellichero">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Child's Adult Height Predictor</h1>
+    <h2>A shiny app that predicts the adult's height of a child based on the height of the parents and the gender of the child</h2>
+    <p>Emanuele Pellichero<br/>Developing Data Products - Coursera Data Science Certificate</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2><span style="color:blue">The Child&#39;s Adult Height Predictor App</span></h2>
+  </hgroup>
+  <article data-timings="">
+    <h3><span style="color:green">If you&#39;re interested in predicting your child&#39;s adult height, this is a tool you&#39;ll want to try:</span></h3>
+
+<ol>
+<li><p>Open up the Child&#39;s Adult Height Predictor app <a href="https://pell.shinyapps.io/Dev_data_products_final_project/">here</a></p></li>
+<li><p>Input Mother&#39;s height using the slidebar.</p></li>
+<li><p>Input Father&#39;s height using the slidebar.</p></li>
+<li><p>Input the child gender.</p></li>
+<li><p>The App will automatically update and will display the estimated adult height of the child on the top right box.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2><span style="color:blue">Predictor Function Info</span></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>The GaltonFamilies dataset was used to build a linear regression model for the Child&#39;s Adult Height predictor.</p></li>
+<li><p>The Galton dataset is a dataset that was used by Galton in 1885 to study the correlation between the parent&#39;s height and their children.</p></li>
+<li><p>The Galton dataset contains data from 934 adult children born to 205 fathers and mothers.</p></li>
+<li><p>Galton generated a variable called the mid-parent height, calculated as (father + 1.08mother)/2 and used it as the predictor for the child stature.</p></li>
+</ul>
+
+<p>Here below is a reference for the Galton study:</p>
+
+<p><span style="font-size:0.63em">Stigler, S. M. (1999). Statistics on the Table: The History of Statistical Concepts and Methods. Harvard University Press. Galton, F. (1886). Regression towards mediocrity in hereditary stature. Journal of the Anthropological Institute of Great Britain and Ireland, 15:246-263. Galton, F. (1869). Hereditary Genius: An Inquiry into its Laws and Consequences. London: Macmillan.</span> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2><span style="color:blue">Linear Regression</span></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In this app the child&#39;s adult height linear regression model from the Galton dataset uses the child height as the outcome and the mid-parent height and the child gender as predictors. The regression model is shown below:</p>
+
+<pre><code class="r">fit &lt;- lm(childHeight ~ midparentHeight + gender,data=GaltonFamilies)
+</code></pre>
+
+<p><img width=950px height=350px src=Fig3.png></img> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2><span style="color:blue">Child&#39;s Adult Height Model</span></h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="Fig2.png" alt="width"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='<span style="color:blue">The Child&#39;s Adult Height Predictor App</span>'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='<span style="color:blue">Predictor Function Info</span>'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='<span style="color:blue">Linear Regression</span>'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='<span style="color:blue">Child&#39;s Adult Height Model</span>'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
